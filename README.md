@@ -1,4 +1,4 @@
 # Projeto CARLOCA
 
 ## Modelo ER
-<img src = "DER-CARLOCA.svg" alt="My Happy SVG"/>
+<img src = "DER-CARLOCA.png" alt="My Happy SVG"/>
