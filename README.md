@@ -2,7 +2,6 @@
 # Projeto CARLOCA
 
 ## Requisitos funcionais do projeto
-<hr>
 
 * Um carro possui modelo, montadora, cor e versão.
 * As cores de carro disponíveis são apenas branco, preto e prata.
@@ -15,8 +14,8 @@
 * Existem várias unidades da franquia CARLOCA o sistema deve saber onde o carro foi locado e onde foi devolvido cada veículo.
 
 <hr>
+
 ## Como Iniciar
-<hr>
 
 * Executar o script CRIACAO_BANCO_CARLOCA.sql dentro do MySql
 * Após, executar o script INSERT_VALORES_CARROS_CLIENTES.sql para inserção de valores dentro das tabelas carros e clientes.
@@ -25,7 +24,8 @@
 * Por ultimo pode ser executado os selects do script SELECTS_CARLOCA.sql para algumas verificações no banco.
 
 <hr>
+
 ## Modelo ER
-<hr>
+
 <img src = "DER-CARLOCA.png" alt="My Happy SVG"/>
 <hr>
