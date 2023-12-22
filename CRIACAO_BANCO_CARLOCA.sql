@@ -5,6 +5,7 @@ USE CARLOCA;
 -- Tabela de Carros
 CREATE TABLE IF NOT EXISTS carros (
     id_carro INT AUTO_INCREMENT PRIMARY KEY,
+    placa VARCHAR(10) UNIQUE NOT NULL,
     modelo VARCHAR(255) NOT NULL,
     montadora VARCHAR(255) NOT NULL,
     cor ENUM('branco', 'preto', 'prata') NOT NULL,
