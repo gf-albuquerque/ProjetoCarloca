@@ -24,30 +24,30 @@ CREATE TABLE IF NOT EXISTS clientes (
 -- Tabela de Locações
 CREATE TABLE IF NOT EXISTS locacoes (
     id_locacao INT AUTO_INCREMENT PRIMARY KEY,
-    id_carro INT,
-    id_cliente INT,
+    id_carro INT NOT NULL,
+    id_cliente INT NOT NULL,
     data_locacao DATETIME NOT NULL,
     data_devolucao DATETIME,
-    quilometragem_inicial INT,
+    quilometragem_inicial INT NOT NULL,
     quilometragem_final INT,
-    local_locacao VARCHAR(255),
+    local_locacao VARCHAR(255) NOT NULL,
     local_devolucao VARCHAR(255),
     CONSTRAINT fk_carro_locacao FOREIGN KEY (id_carro) REFERENCES carros(id_carro),
     CONSTRAINT fk_cliente_locacao FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-    UNIQUE KEY uk_cliente_locacao (id_cliente),
-    UNIQUE KEY uk_carro_locado (id_carro)
+    CHECK (data_devolucao IS NULL OR (data_devolucao IS NOT NULL AND id_cliente IS NULL)),
+    CHECK (data_devolucao IS NULL OR (data_devolucao IS NOT NULL AND id_carro IS NULL))
 );
 
 -- Tabela de Histórico de Clientes por Carro
 CREATE TABLE IF NOT EXISTS historico_clientes_carro (
     id_historico INT AUTO_INCREMENT PRIMARY KEY,
-    id_carro INT,
-    id_cliente INT,
+    id_carro INT NOT NULL,
+    id_cliente INT NOT NULL,
     data_locacao DATETIME NOT NULL,
     data_devolucao DATETIME,
-    quilometragem_inicial INT,
+    quilometragem_inicial INT NOT NULL,
     quilometragem_final INT,
-    local_locacao VARCHAR(255),
+    local_locacao VARCHAR(255) NOT NULL,
     local_devolucao VARCHAR(255),
     valor_pago DECIMAL(10, 2) NOT NULL,
     CONSTRAINT fk_carro_historico_cliente FOREIGN KEY (id_carro) REFERENCES carros(id_carro),
